@@ -9,10 +9,10 @@ def get_uri_file_names(path=URI_DATA_PATH):
     try:
         result = os.listdir(path)
     except OSError:
-        sys.stderror.write("uri data directory does not exist")
+        sys.stderr.write("uri data directory does not exist")
         sys.exit()
     if not result:
-        sys.stderror.write("uri data directory is empty")
+        sys.stderr.write("uri data directory is empty")
         sys.exit()
     return result
 

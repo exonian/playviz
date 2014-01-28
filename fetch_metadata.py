@@ -14,12 +14,14 @@ def get_uri_file_names(path=URI_DATA_PATH):
     if not result:
         sys.stderr.write("uri data directory is empty")
         sys.exit()
+    sys.stdout.write("uri dir contains {count} files:\n    {files}\n".format(
+        count=len(result),
+        files=", ".join(result)
+    ))
     return result
 
 def main():
     uri_file_names = get_uri_file_names()
-    sys.stdout.write(", ".join(uri_file_names))
-    sys.stdout.write("\n")
 
 
 if __name__ == "__main__":

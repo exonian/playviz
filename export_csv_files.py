@@ -7,7 +7,7 @@ import unicode_csv
 from fetch_metadata import DATA_PATH, JSON_DATA_PATH
 
 CSV_DATA_PATH = os.path.join(DATA_PATH, 'csv')
-MASTER_CSV_FILE_NAME = 'playviz'
+MASTER_CSV_FILE_NAME = 'playviz.csv'
 
 def get_json_file_names(path=JSON_DATA_PATH):
     try:

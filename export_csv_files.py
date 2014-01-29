@@ -43,6 +43,8 @@ def make_csv_file(file_name):
     csv_writer = unicode_csv.UnicodeWriter(f)
     sys.stdout.write("Writing csv output for {file_name}\n".format(file_name=file_name))
 
+    csv_writer.writerow(['Name', 'Artist', 'Length', \
+                         'Popularity', 'Album name', 'Album year'])
     for item in json_body:
         track = item['track']
         csv_writer.writerow([

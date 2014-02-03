@@ -48,7 +48,7 @@ def make_csv_file(file_name, write_master_headers):
 
     sys.stdout.write("Writing csv output for {file_name}\n".format(file_name=file_name))
 
-    headers = deque(('Name', 'Artist', 'Length', \
+    headers = deque(('Name', 'Artist', 'Length', 'Year', \
                'Popularity', 'Album name', 'Album year'))
 
     csv_writer.writerow(headers)
@@ -62,6 +62,7 @@ def make_csv_file(file_name, write_master_headers):
             track['name'],
             track['artists'][0]['name'],
             str(track['length']),
+            item['year_from_search'],
             track['popularity'],
             track['album']['name'],
             track['album']['released'],

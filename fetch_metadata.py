@@ -42,11 +42,14 @@ def get_uris_from_file(file_name):
     f = open(os.path.join(URI_DATA_PATH, file_name), 'r')
     return f.read().split()
 
+def get_track_name(track_name):
+    return track_name.replace(' - Remastered', '')
+
 def improve_year(response_json):
     payload = {
         'q': u'artist:"{a}" track:"{t}"'.format(
             a = response_json['track']['artists'][0]['name'],
-            t = response_json['track']['name']
+            t = get_track_name(response_json['track']['name']),
         )
     }
     search_response = requests.get(SEARCH_URL, params=payload)

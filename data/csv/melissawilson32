@@ -1,41 +1,41 @@
-Name,Artist,Length,Popularity,Album name,Album year
-Intro,Bonobo,46.72,0.42000,Animal Magic,2000
-Sleepy Seven,Bonobo,322.523,0.45000,Animal Magic,2000
-Dinosaurs,Bonobo,241.474,0.44000,Animal Magic,2000
-Kota,Bonobo,325.033,0.45000,Animal Magic,2000
-Terrapin,Bonobo,280.247,0.48000,Animal Magic,2000
-The Plug,Bonobo,318.941,0.46000,Animal Magic,2000
-Shadow Tricks,Bonobo,249.213,0.43000,Animal Magic,2000
-Gypsy,Bonobo,218.911,0.43000,Animal Magic,2000
-Sugar Rhyme,Bonobo,287.384,0.43000,Animal Magic,2000
-Silver,Bonobo,393.925,0.48000,Animal Magic,2000
-What Is Love,Haddaway,270.678,0.70000,What is Love - Remix,1993
-Scar Tissue,Red Hot Chili Peppers,216.166,0.70000,Greatest Hits,2003
-Californication,Red Hot Chili Peppers,330.079,0.73000,Greatest Hits,2003
-Sunday Morning,Maroon 5,245.134,0.63000,Songs About Jane,2002
-Tomorrow Never Comes,Dot Allison,269.397,0.23000,Afterglow,1990
-Vienna - 2008 Digital Remaster;2008 - Remaster;,Ultravox,298.47,0.57000,Vienna,1990
-New Sensation,INXS,219.983,0.37000,The Very Best,2011
-If You Leave Me Now,Chicago,236.376,0.47000,"The Best of Chicago, 40th Anniversary Edition",2007
-Nightswimming,R.E.M.,255.906,0.61000,Automatic For The People,1992
-Moonlight Sonata,Beethoven,447.627,0.59000,Moonlight Sonata - Single,2011
-Stacy's Mom,Fountains Of Wayne,198.23,0.68000,Welcome Interstate Managers,2003
-Ms. Jackson,OutKast,270.809,0.78000,Stankonia,1999
-Wake Me up Before You Go Go,Wham!,230.571,0.63000,The Definitive 80's (eighties),2007
-"Four Seasons: Spring 1st Mvt., The",Antonio Vivaldi,192.217,0.62000,Vivaldi,2009
-Fur Elise,Ludwig van Beethoven,148.189,0.62000,Great Composers - Beethoven,2008
-Purple Rain,Prince & The Revolution,522.819,0.56000,Ultimate,2006
-Madness,Muse,280.012,0.80000,The 2nd Law,2012
-Sing For Absolution,Muse,295.176,0.58000,Absolution,2003
-Undisclosed Desires,Muse,236.323,0.73000,The Resistance,2009
-17,Kings Of Leon,185.602,0.52000,Only By The Night,2008
-Closer,Kings Of Leon,237.761,0.59000,Only By The Night,2008
-The Scientist,Róisín,294.966,0.40000,Celtic Cold Play,2012
-Light Me Up,Birdy,255.801,0.70000,Fire Within,2013
-I'm Yours,Jason Mraz,243.304,0.77000,We Sing. We Dance. We Steal Things.,2008
-Spectrum (Say My Name) - Calvin Harris Remix Radio Edit,Florence + The Machine,218.44,0.76000,Spectrum (Say My Name) EP,2012
-Chasing Cars,Snow Patrol,266.652,0.76000,Chasing Cars,2006
-Somebody Told Me,The Killers,197.394,0.74000,Hot Fuss,2004
-Exogenesis: Symphony Part 1 [Overture],Muse,258.73,0.57000,The Resistance,2009
-Exogenesis: Symphony Part 2 [Cross-pollination],Muse,236.428,0.56000,The Resistance,2009
-Exogenesis: Symphony Part 3 [Redemption],Muse,277.319,0.57000,The Resistance,2009
+Name,Artist,Length,Year,Popularity,Album name,Album year
+Intro,Bonobo,46.72,2000,0.43000,Animal Magic,2000
+Sleepy Seven,Bonobo,322.523,2000,0.46000,Animal Magic,2000
+Dinosaurs,Bonobo,241.474,2000,0.45000,Animal Magic,2000
+Kota,Bonobo,325.033,2000,0.46000,Animal Magic,2000
+Terrapin,Bonobo,280.247,2000,0.49000,Animal Magic,2000
+The Plug,Bonobo,318.941,2000,0.47000,Animal Magic,2000
+Shadow Tricks,Bonobo,249.213,2000,0.44000,Animal Magic,2000
+Gypsy,Bonobo,218.911,2000,0.44000,Animal Magic,2000
+Sugar Rhyme,Bonobo,287.384,2000,0.44000,Animal Magic,2000
+Silver,Bonobo,393.925,2000,0.49000,Animal Magic,2000
+What Is Love,Haddaway,270.678,1990,0.72000,What is Love - Remix,1993
+Scar Tissue,Red Hot Chili Peppers,216.166,1999,0.72000,Greatest Hits,2003
+Californication,Red Hot Chili Peppers,330.079,1999,0.74000,Greatest Hits,2003
+Sunday Morning,Maroon 5,245.134,2002,0.64000,Songs About Jane,2002
+Tomorrow Never Comes,Dot Allison,269.397,1990,0.24000,Afterglow,1990
+Vienna - 2008 Digital Remaster;2008 - Remaster;,Ultravox,298.47,1990,0.58000,Vienna,1990
+New Sensation,INXS,219.983,1988,0.38000,The Very Best,2011
+If You Leave Me Now,Chicago,236.376,2002,0.49000,"The Best of Chicago, 40th Anniversary Edition",2007
+Nightswimming,R.E.M.,255.906,1991,0.62000,Automatic For The People,1992
+Moonlight Sonata,Beethoven,447.627,2001,0.61000,Moonlight Sonata - Single,2011
+Stacy's Mom,Fountains Of Wayne,198.23,2003,0.69000,Welcome Interstate Managers,2003
+Ms. Jackson,OutKast,270.809,1999,0.79000,Stankonia,1999
+Wake Me up Before You Go Go,Wham!,230.571,1984,0.63000,The Definitive 80's (eighties),2007
+"Four Seasons: Spring 1st Mvt., The",Antonio Vivaldi,192.217,2009,0.63000,Vivaldi,2009
+Fur Elise,Ludwig van Beethoven,148.189,1987,0.63000,Great Composers - Beethoven,2008
+Purple Rain,Prince & The Revolution,522.819,1984,0.57000,Ultimate,2006
+Madness,Muse,280.012,2012,0.82000,The 2nd Law,2012
+Sing For Absolution,Muse,295.176,2003,0.59000,Absolution,2003
+Undisclosed Desires,Muse,236.323,2009,0.74000,The Resistance,2009
+17,Kings Of Leon,185.602,2008,0.53000,Only By The Night,2008
+Closer,Kings Of Leon,237.761,2008,0.60000,Only By The Night,2008
+The Scientist,Róisín,294.966,2012,0.41000,Celtic Cold Play,2012
+Light Me Up,Birdy,255.801,2013,0.71000,Fire Within,2013
+I'm Yours,Jason Mraz,243.304,2008,0.78000,We Sing. We Dance. We Steal Things.,2008
+Spectrum (Say My Name) - Calvin Harris Remix Radio Edit,Florence + The Machine,218.44,2012,0.77000,Spectrum (Say My Name) EP,2012
+Chasing Cars,Snow Patrol,266.652,2006,0.77000,Chasing Cars,2006
+Somebody Told Me,The Killers,197.394,2004,0.75000,Hot Fuss,2004
+Exogenesis: Symphony Part 1 [Overture],Muse,258.73,2009,0.58000,The Resistance,2009
+Exogenesis: Symphony Part 2 [Cross-pollination],Muse,236.428,2009,0.57000,The Resistance,2009
+Exogenesis: Symphony Part 3 [Redemption],Muse,277.319,2009,0.58000,The Resistance,2009

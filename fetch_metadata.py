@@ -8,6 +8,7 @@ URI_DATA_PATH = os.path.join(DATA_PATH, 'uris')
 JSON_DATA_PATH = os.path.join(DATA_PATH, 'json')
 
 LOOKUP_URL = "http://ws.spotify.com/lookup/1/.json?uri={uri}"
+SEARCH_URL = "http://ws.spotify.com/search/1/track.json"
 
 def get_uri_file_names(path=URI_DATA_PATH):
     try:
@@ -41,6 +42,19 @@ def get_uris_from_file(file_name):
     f = open(os.path.join(URI_DATA_PATH, file_name), 'r')
     return f.read().split()
 
+def improve_year(response_json):
+    payload = {
+        'q': u'artist:"{a}" track:"{t}"'.format(
+            a = response_json['track']['artists'][0]['name'],
+            t = response_json['track']['name']
+        )
+    }
+    search_response = requests.get(SEARCH_URL, params=payload)
+    years = [track['album']['released'] for track in search_response.json()['tracks']]
+    years.sort()
+    response_json.update(year_from_search=years[0])
+    return response_json
+
 def make_json_file(file_name):
     uris = get_uris_from_file(file_name)
     json_responses = []
@@ -50,7 +64,8 @@ def make_json_file(file_name):
             uri=uri,
         ))
         response = requests.get(LOOKUP_URL.format(uri=uri))
-        json_responses.append(response.json())
+        json_response = improve_year(response.json())
+        json_responses.append(json_response)
     sys.stdout.write("Creating json output for {file_name}\n".format(file_name=file_name))
     full_json = json.dumps(json_responses)
     sys.stdout.write("Writing json output for {file_name}\n".format(file_name=file_name))

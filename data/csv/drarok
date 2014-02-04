@@ -1,29 +1,29 @@
-Name,Artist,Length,Year,Popularity,Album name,Album year
-Carol of the Bells,August Burns Red,168.268,2008,0.34000,"August Burns Red Presents: Sleddin' hill, a Holiday Album",2013
-Icarus Lives,Periphery,264.455,2010,0.44000,Periphery,2010
-Hyperventilate,Frost,452.228,2006,0.00000,Milliontown,2006
-BEER!!!,Psychostick,135.744,2006,0.51000,We Couldn't Think Of A Title,2006
-Buttersnips,Periphery,354.211,2010,0.36000,Periphery,2010
-Kings and Queens,Thirty Seconds To Mars,348.041,2009,0.74000,This Is War,2009
-Le Onde,Ludovico Einaudi,324.275,1996,0.37000,Le Onde,2004
-Red Is The New Black,Funeral For A Friend,314.837,2003,0.33000,Casually Dressed And Deep In Conversation,2003
-Wake Me up Before You Go Go,Wham!,230.571,1984,0.63000,The Definitive 80's (eighties),2007
-Wizards In Winter,Trans-Siberian Orchestra,184.896,2004,0.43000,Tales Of Winter: Selections From The TSO Rock Operas,2013
-Toys,Frost,186.465,2008,0.00000,Experiments In Mass Appeal,2008
-Scarlet,Periphery,249.082,2012,0.51000,Periphery II,2012
-Into Oblivion [Reunion],Funeral For A Friend,263.357,2007,0.47000,Tales Don't Tell Themselves,2007
-Way Away,Yellowcard,202.335,2003,0.64000,Ocean Avenue,2003
-Absolutely (Story Of A Girl) - Radio Mix,Nine Days,189.55,2000,0.66000,The Madding Crowd,2000
-Saline,Frost,369.14,2008,0.13000,Experiments In Mass Appeal,2008
-Existentialism On Prom Night,Straylight Run,241.735,2004,0.56000,Straylight Run,2004
-Be Like That,3 Doors Down,266.521,1999,0.57000,The Greatest Hits,2012
-The Forgotten One,Times Of Grace,278.443,2010,0.43000,The Hymn of a Broken Man,2010
-Overture 1928 [Scene Two],Dream Theater,218.1,1999,0.47000,Metropolis Part 2: Scenes From A Memory,1999
-The Kids Aren't Alright,The Offspring,179.824,1994,0.76000,Americana,1998
-Word Up - Radio Mix,Gun,260.9,1994,0.44000,Swagger,1994
-Luck as a Constant,Periphery,365.296,2012,0.44000,Periphery II,2012
-Back To School - Mini Maggit,Deftones,237.421,2000,0.60000,White Pony,2000
-Thirty And Seven,August Burns Red,199.877,2009,0.26000,Constellations,2009
-Light,Periphery,350.917,2010,0.35000,Periphery,2010
-Empire,August Burns Red,232.742,2008,0.30000,Leveler,2008
-Muramasa,Periphery,171.562,2012,0.45000,Periphery II,2012
+Name,Artist,Length,Year,Popularity,Top popularity,Album name,Album year
+Carol of the Bells,August Burns Red,168.268,2008,0.34000,0.53,"August Burns Red Presents: Sleddin' hill, a Holiday Album",2013
+Icarus Lives,Periphery,264.455,2010,0.44000,0.47,Periphery,2010
+Hyperventilate,Frost,452.228,2006,0.00000,0.29,Milliontown,2006
+BEER!!!,Psychostick,135.744,2006,0.51000,0.51,We Couldn't Think Of A Title,2006
+Buttersnips,Periphery,354.211,2010,0.36000,0.36,Periphery,2010
+Kings and Queens,Thirty Seconds To Mars,348.041,2009,0.74000,0.74,This Is War,2009
+Le Onde,Ludovico Einaudi,324.275,1996,0.37000,0.62,Le Onde,2004
+Red Is The New Black,Funeral For A Friend,314.837,2003,0.33000,0.41,Casually Dressed And Deep In Conversation,2003
+Wake Me up Before You Go Go,Wham!,230.571,1984,0.63000,0.68,The Definitive 80's (eighties),2007
+Wizards In Winter,Trans-Siberian Orchestra,184.896,2004,0.43000,0.61,Tales Of Winter: Selections From The TSO Rock Operas,2013
+Toys,Frost,186.465,2008,0.00000,0.16,Experiments In Mass Appeal,2008
+Scarlet,Periphery,249.082,2012,0.51000,0.51,Periphery II,2012
+Into Oblivion [Reunion],Funeral For A Friend,263.357,2007,0.47000,0.47,Tales Don't Tell Themselves,2007
+Way Away,Yellowcard,202.335,2003,0.64000,0.64,Ocean Avenue,2003
+Absolutely (Story Of A Girl) - Radio Mix,Nine Days,189.55,2000,0.66000,0.66,The Madding Crowd,2000
+Saline,Frost,369.14,2008,0.13000,0.17,Experiments In Mass Appeal,2008
+Existentialism On Prom Night,Straylight Run,241.735,2004,0.56000,0.56,Straylight Run,2004
+Be Like That,3 Doors Down,266.521,1999,0.57000,0.6,The Greatest Hits,2012
+The Forgotten One,Times Of Grace,278.443,2010,0.43000,0.43,The Hymn of a Broken Man,2010
+Overture 1928 [Scene Two],Dream Theater,218.1,1999,0.47000,0.47,Metropolis Part 2: Scenes From A Memory,1999
+The Kids Aren't Alright,The Offspring,179.824,1994,0.76000,0.76,Americana,1998
+Word Up - Radio Mix,Gun,260.9,1994,0.44000,0.44,Swagger,1994
+Luck as a Constant,Periphery,365.296,2012,0.44000,0.44,Periphery II,2012
+Back To School - Mini Maggit,Deftones,237.421,2000,0.60000,0.6,White Pony,2000
+Thirty And Seven,August Burns Red,199.877,2009,0.26000,0.45,Constellations,2009
+Light,Periphery,350.917,2010,0.35000,0.35,Periphery,2010
+Empire,August Burns Red,232.742,2008,0.30000,0.44,Leveler,2008
+Muramasa,Periphery,171.562,2012,0.45000,0.45,Periphery II,2012

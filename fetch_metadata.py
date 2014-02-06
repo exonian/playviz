@@ -46,7 +46,8 @@ def get_track_name(track_name):
     return track_name.replace(' - Remastered', '')
 
 def get_year(search_json):
-    years = [track['album']['released'] for track in search_json['tracks']]
+    years = [track['album']['released'] for track in search_json['tracks'] \
+             if int(track['album']['released']) > 1910]
     return sorted(years)[0]
 
 def get_popularity(search_json):

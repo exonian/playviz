@@ -56,23 +56,28 @@ def get_popularity(search_json):
     pops = [track['popularity'] for track in search_json['tracks']]
     return sorted(pops, reverse=True)[0]
 
-def get_echonest_metadata(search_terms):
+def get_echonest_metadata(search_terms, spotify_uri):
+    buckets = [
+        'audio_summary',
+        'artist_discovery',
+        'artist_familiarity',
+        'artist_hotttnesss',
+        'artist_location',
+        'song_discovery',
+        'song_hotttnesss',
+    ]
     try:
         s = song.search(
             artist=search_terms['a'],
             title=search_terms['t'],
-            buckets=[
-                'audio_summary',
-                'artist_discovery',
-                'artist_familiarity',
-                'artist_hotttnesss',
-                'artist_location',
-                'song_discovery',
-                'song_hotttnesss',
-            ],
+            buckets=buckets,
         )[0]
     except IndexError:
-        return []
+        sys.stdout.write("  Falling back to uri lookup\n")
+        s = song.profile(
+            track_ids=[spotify_uri.replace('spotify', 'spotify-WW')],
+            buckets=buckets
+        )[0]
     return json.dumps(s.__dict__)
 
 def improve_data(response_json):
@@ -87,7 +92,7 @@ def improve_data(response_json):
     response_json.update(
         year_from_search=get_year(search_json),
         popularity_from_search=get_popularity(search_json),
-        echonest=get_echonest_metadata(search_terms),
+        echonest=get_echonest_metadata(search_terms, response_json['track']['href']),
     )
     return response_json
 

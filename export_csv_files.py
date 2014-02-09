@@ -1,4 +1,4 @@
-from collections import deque
+from collections import defaultdict, deque
 import json
 import os
 import sys
@@ -48,8 +48,14 @@ def make_csv_file(file_name, write_master_headers):
 
     sys.stdout.write("Writing csv output for {file_name}\n".format(file_name=file_name))
 
-    headers = deque(('Name', 'Artist', 'Length', 'Year', \
-               'Popularity', 'Top popularity', 'Album name', 'Album year'))
+    headers = deque(('Name', 'Artist', 'Length', 'Year',
+              'Popularity', 'Top popularity', 'Album name', 'Album year',
+              'Artist location', 'Artist lat', 'Artist lon',
+              'Artist discovery', 'Artist familiarity', 'Artist hotttnesss',
+              'Song discovery', 'Song hotttnesss', 'Acousticness',
+              'Danceability', 'Energy', 'Key', 'Liveness', 'Loudness', 'Mode',
+              'Speechiness', 'Tempo', 'Time signature', 'Valence',
+              ))
 
     csv_writer.writerow(headers)
     if write_master_headers:
@@ -58,6 +64,12 @@ def make_csv_file(file_name, write_master_headers):
 
     for item in json_body:
         track = item['track']
+        try:
+            en = json.loads(item['echonest'])['cache']
+        except TypeError:
+            en = {}
+        location = en.get('artist_location', {})
+        audio = en.get('audio_summary', {})
         row = deque([
             track['name'],
             track['artists'][0]['name'],
@@ -67,6 +79,25 @@ def make_csv_file(file_name, write_master_headers):
             item['popularity_from_search'],
             track['album']['name'],
             track['album']['released'],
+            location.get('location', ''),
+            str(location.get('latitude', '')),
+            str(location.get('longitude', '')),
+            str(en.get('artist_discovery', '')),
+            str(en.get('artist_familiarity', '')),
+            str(en.get('artist_hotttnesss', '')),
+            str(en.get('song_discovery', '')),
+            str(en.get('song_hotttnesss', '')),
+            str(audio.get('acousticness', '')),
+            str(audio.get('danceability', '')),
+            str(audio.get('energy', '')),
+            str(audio.get('key', '')),
+            str(audio.get('liveness', '')),
+            str(audio.get('loudness', '')),
+            str(audio.get('mode', '')),
+            str(audio.get('speechiness', '')),
+            str(audio.get('tempo', '')),
+            str(audio.get('time_signature', '')),
+            str(audio.get('valence', '')),
         ])
         csv_writer.writerow(row)
         row.appendleft(file_name)

@@ -4,6 +4,7 @@ import requests
 import sys
 
 from pyechonest import song
+from pyechonest.util import EchoNestAPIError
 
 DATA_PATH = 'data'
 URI_DATA_PATH = os.path.join(DATA_PATH, 'uris')
@@ -56,7 +57,7 @@ def get_popularity(search_json):
     pops = [track['popularity'] for track in search_json['tracks']]
     return sorted(pops, reverse=True)[0]
 
-def get_echonest_metadata(search_terms, spotify_uri):
+def get_echonest_metadata(search_terms, spotify_uris):
     buckets = [
         'audio_summary',
         'artist_discovery',
@@ -74,10 +75,14 @@ def get_echonest_metadata(search_terms, spotify_uri):
         )[0]
     except IndexError:
         sys.stdout.write("  Falling back to uri lookup\n")
-        s = song.profile(
-            track_ids=[spotify_uri.replace('spotify', 'spotify-WW')],
-            buckets=buckets
-        )[0]
+        try:
+            s = song.profile(
+                track_ids=spotify_uris,
+                buckets=buckets
+            )[0]
+        except EchoNestAPIError:
+            sys.stdout.write("  Failed to find echonest metadata\n")
+            return []
     return json.dumps(s.__dict__)
 
 def improve_data(response_json):
@@ -92,7 +97,10 @@ def improve_data(response_json):
     response_json.update(
         year_from_search=get_year(search_json),
         popularity_from_search=get_popularity(search_json),
-        echonest=get_echonest_metadata(search_terms, response_json['track']['href']),
+        echonest=get_echonest_metadata(
+            search_terms,
+            [track['href'].replace('spotify', 'spotify-WW') for track in search_json['tracks']],
+        ),
     )
     return response_json
 

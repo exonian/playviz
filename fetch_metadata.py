@@ -3,6 +3,8 @@ import os
 import requests
 import sys
 
+from pyechonest import song
+
 DATA_PATH = 'data'
 URI_DATA_PATH = os.path.join(DATA_PATH, 'uris')
 JSON_DATA_PATH = os.path.join(DATA_PATH, 'json')
@@ -54,17 +56,39 @@ def get_popularity(search_json):
     pops = [track['popularity'] for track in search_json['tracks']]
     return sorted(pops, reverse=True)[0]
 
+def get_echonest_metadata(search_terms):
+    try:
+        s = song.search(
+            artist=search_terms['a'],
+            title=search_terms['t'],
+            buckets=[
+                'audio_summary',
+                'artist_discovery',
+                'artist_familiarity',
+                'artist_hotttnesss',
+                'artist_location',
+                'song_discovery',
+                'song_hotttnesss',
+            ],
+        )[0]
+    except IndexError:
+        return []
+    return json.dumps(s.__dict__)
+
 def improve_data(response_json):
+    search_terms = {
+        'a': response_json['track']['artists'][0]['name'],
+        't': get_track_name(response_json['track']['name']),
+    }
     payload = {
-        'q': u'artist:"{a}" track:"{t}"'.format(
-            a = response_json['track']['artists'][0]['name'],
-            t = get_track_name(response_json['track']['name']),
-        )
+        'q': u'artist:"{a}" track:"{t}"'.format(**search_terms)
     }
     search_json = requests.get(SEARCH_URL, params=payload).json()
-    response_json.update(year_from_search=get_year(search_json))
-    response_json.update(popularity_from_search=get_popularity(search_json))
-    response_json.update(other_track_uris=[track['href'] for track in search_json['tracks']])
+    response_json.update(
+        year_from_search=get_year(search_json),
+        popularity_from_search=get_popularity(search_json),
+        echonest=get_echonest_metadata(search_terms),
+    )
     return response_json
 
 def make_json_file(file_name):

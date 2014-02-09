@@ -64,6 +64,7 @@ def improve_data(response_json):
     search_json = requests.get(SEARCH_URL, params=payload).json()
     response_json.update(year_from_search=get_year(search_json))
     response_json.update(popularity_from_search=get_popularity(search_json))
+    response_json.update(other_track_uris=[track['href'] for track in search_json['tracks']])
     return response_json
 
 def make_json_file(file_name):

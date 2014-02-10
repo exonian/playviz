@@ -48,7 +48,7 @@ def make_csv_file(file_name, write_master_headers):
 
     sys.stdout.write("Writing csv output for {file_name}\n".format(file_name=file_name))
 
-    headers = deque(('Name', 'Artist', 'Length', 'Year',
+    headers = deque(('Position', 'Name', 'Artist', 'Length', 'Year',
               'Popularity', 'Top popularity', 'Album name', 'Album year',
               'Artist location', 'Artist lat', 'Artist lon',
               'Artist discovery', 'Artist familiarity', 'Artist hotttnesss',
@@ -62,7 +62,7 @@ def make_csv_file(file_name, write_master_headers):
         headers.appendleft('User')
         master_csv_writer.writerow(headers)
 
-    for item in json_body:
+    for i, item in enumerate(json_body):
         track = item['track']
         try:
             en = json.loads(item['echonest'])['cache']
@@ -71,6 +71,7 @@ def make_csv_file(file_name, write_master_headers):
         location = en.get('artist_location', {})
         audio = en.get('audio_summary', {})
         row = deque([
+            str(i),
             track['name'],
             track['artists'][0]['name'],
             str(track['length']),

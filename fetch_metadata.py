@@ -46,7 +46,10 @@ def get_uris_from_file(file_name):
     return f.read().split()
 
 def get_track_name(track_name):
-    return track_name.replace(' - Remastered', '')
+    return track_name.replace(
+        ' - Remastered', '').replace(
+        ' - Live/1995', '').replace(
+        ' 5/12/1990', '')
 
 def get_year(search_json):
     years = [track['album']['released'] for track in search_json['tracks'] \

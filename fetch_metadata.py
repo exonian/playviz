@@ -54,11 +54,17 @@ def get_track_name(track_name):
 def get_year(search_json):
     years = [track['album']['released'] for track in search_json['tracks'] \
              if int(track['album']['released']) > 1910]
-    return sorted(years)[0]
+    try:
+        return sorted(years)[0]
+    except IndexError:
+        return None
 
 def get_popularity(search_json):
     pops = [track['popularity'] for track in search_json['tracks']]
-    return sorted(pops, reverse=True)[0]
+    try:
+        return sorted(pops, reverse=True)[0]
+    except IndexError:
+        return None
 
 def get_echonest_metadata(search_terms, spotify_uris):
     buckets = [
@@ -98,8 +104,8 @@ def improve_data(response_json):
     }
     search_json = requests.get(SEARCH_URL, params=payload).json()
     response_json.update(
-        year_from_search=get_year(search_json),
-        popularity_from_search=get_popularity(search_json),
+        year_from_search=get_year(search_json) or response_json['track']['album']['released'],
+        popularity_from_search=get_popularity(search_json) or response_json['track']['popularity'],
         echonest=get_echonest_metadata(
             search_terms,
             [track['href'].replace('spotify', 'spotify-WW') for track in search_json['tracks']],
